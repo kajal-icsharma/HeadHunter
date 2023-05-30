@@ -1,0 +1,159 @@
+<title>Login/Register - HeadHunters</title>
+
+
+<%- include('./partials/header.ejs') %>
+<link rel="stylesheet" href="/stylesheets/login.css">
+
+<div style="height: 6rem; width: 100%; background: none;"></div>
+
+<div class="cont mt-5">
+  <div class="form sign-in">
+    <h2>Welcome back</h2>
+    <form action="/login" method="post">
+
+      <label>
+        <span>Email</span>
+        <input type="email" name="username"/>
+      </label>
+      <label>
+        <span>Password</span>
+        <input type="password" name="password"/>
+      </label>
+      <p class="forgot-pass">Forgot password?</p>
+      <button type="submit" class="submit" value="login">Sign In</button>
+      <button type="button" class="fb-btn">Connect with <span>facebook</span></button>
+    </form>
+  </div>
+  <div class="sub-cont">
+    <div class="img">
+      <div class="img__text m--up">
+        <h2>New here?</h2>
+        <p>Sign up and discover great amount of new opportunities!</p>
+      </div>
+      <div class="img__text m--in">
+        <h2>One of us?</h2>
+        <p>If you already has an account, just sign in. We've missed you!</p>
+      </div>
+      <div class="img__btn">
+        <span class="m--up">Sign Up</span>
+        <span class="m--in">Sign In</span>
+      </div>
+    </div>
+    <div class="form sign-up">
+      <h2>Time to feel like home</h2>
+      <form action="/register" method="post">
+        <div id="page-1">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" required/>
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="username" required/>
+          </label>
+          <label>
+            <span>Password</span>
+            <input type="password" name="password" required/>
+          </label>
+          
+          <button type="button" id="next1" class="submit">Next</button>
+          
+        </div>
+        <div id="page-2">
+          <label>
+            <span>Course</span>
+            <input type="text" name="course" required/>
+          </label>
+          <label>
+            <span>Branch</span>
+            <input type="text" name="branch" required/>
+          </label>
+          <label>
+            <span>CGPA</span>
+            <input type="number" min="0" max="10" step="0.01" name="cgpa" required/>
+          </label>
+          <div class="btn-container mx-auto" style="width: 260px;">
+            <div style= "display: flex;">
+              <button type="button" id="prev1" class="submit navigator">Prev</button>
+              <button type="button" id="next2" class="submit navigator">Next</button>
+            </div>
+          </div>
+        </div>
+        <div id="page-3">
+          <label>
+            <span>Mobile Number</span>
+            <input type="number" name="mobile_number" required/>
+          </label>
+          <label>
+            <span>Resume Link</span>
+            <input type="string"  class="input-tag form-control" name="resume_link" required/>
+          </label>
+          <label>
+            <span>Avatar Link</span>
+            <input type="string" class="input-tag form-control" name="avatar" required/>
+          </label>
+          <div class="btn-container mx-auto" style="width: 260px;">
+            <div style= "display: flex;">
+              <button type="button" id="prev2" class="submit navigator">Prev</button>
+              <button type="submit" id="submit-btn" class="submit navigator">Submit</button>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="fb-btn">Join with <span>facebook</span></button>
+      </form>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+<script>
+  document.querySelector('.img__btn').addEventListener('click', function() {
+  document.querySelector('.cont').classList.toggle('s--signup');
+
+  const prevBtn = document.getElementById('prev1');
+const prevBtn2 = document.getElementById('prev2');
+const nextBtn = document.getElementById('next1');
+const nextBtn2 = document.getElementById('next2');
+const submitBtn = document.getElementById('submit-btn');
+
+const page1 = document.getElementById('page-1');
+const page2 = document.getElementById('page-2');
+const page3 = document.getElementById('page-3');
+
+nextBtn.addEventListener('click', () => {
+  page1.style.display = 'none';
+  page2.style.display = 'block';
+});
+
+prevBtn.addEventListener('click', () => {
+  page2.style.display = 'none';
+  page1.style.display = 'block';
+});
+
+nextBtn2.addEventListener('click', () => {
+  page2.style.display = 'none';
+  page3.style.display = 'block';
+});
+
+prevBtn2.addEventListener('click', () => {
+  page3.style.display = 'none';
+  page2.style.display = 'block';
+});
+
+submitBtn.addEventListener('click', () => {
+  // do something with the form data
+});
+
+
+
+});
+</script>
+
+<script>
+    const myNav = document.querySelector(".my-navbar");
+    myNav.classList.add("scrolled");
+</script>
+<%- include('./partials/footer.ejs') %>

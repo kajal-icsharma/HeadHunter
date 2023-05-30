@@ -1,0 +1,47 @@
+body{
+    background: rgb(2,0,36);
+    background: linear-gradient(10deg, rgba(2,0,36,0.9164915966386554) 19%, rgba(0,176,116,0.8464635854341737) 74%, rgba(0,255,183,0.4375) 100%);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.notif-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container{
+    color: whitesmoke;
+    height: 30rem;
+    width: 45rem;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10px );
+    -webkit-backdrop-filter: blur( 10px );
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.input-container h1{
+    text-align: center;
+    color: aliceblue;
+}
+
+.input-container form .form-control{
+    background: none;
+    color: whitesmoke;
+}
+
+.input-container form .form-control:focus{
+    background: none;
+    color: whitesmoke;
+    border: 1px solid black  !important;
+  box-shadow: 0 0 7.5px var(--primary);
+  
+}

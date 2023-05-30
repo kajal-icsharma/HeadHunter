@@ -1,0 +1,184 @@
+<title>Notifications - HeadHunters</title>
+
+
+<style>
+body{
+  background-image: url('/img/cool-background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+    .notification-container {
+  width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #26A69A;
+  border-radius: 10px;
+  
+}
+
+.notifications {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.notification-body {
+  margin: 0 0 10px 0;
+}
+
+.notification-author {
+  font-size: 12px;
+  color: #999;
+}
+
+.notification-image {
+  width: 100px;
+  height: 100px;
+  float: left;
+  margin-right: 10px;
+}
+
+.notification-actions {
+  text-align: right;
+}
+
+.delete-notification {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.notification-body h2 {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.notification-body p {
+  color: white;
+  font-size: 14px;
+}
+
+.notification-image {
+  border-radius: 50%;
+}
+
+.notification-actions button {
+  background-color: transparent;
+  border: 1px solid #26A69A;
+  color: #26A69A;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.notification-actions button:hover {
+  background-color: #26A69A;
+  color: white;
+}
+
+.job-item{
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+</style>
+
+
+<%- include('./partials/header.ejs') %>
+
+<div style="height: 6rem; width: 100%; background: none;"></div>
+
+
+<!-- <% for( let notif of allNotifs ) { %>
+<div>
+    body: <%= notif.body.slice(0, 5) %>..., author: <%= notif.author %>
+    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left"
+        title="<%= notif.body %>">Read More</button>
+    <form action="/notifications/<%= notif._id %>?_method=DELETE" method="post">
+        <input type="submit" value="delete">
+    </form>
+</div>
+<% } %> -->
+
+<div class="container-xxl py-5 text-dark jobs-container">
+    <div class="container">
+        <div class="waviy mb-4" style="color: black;">
+            <div class="mx-auto">
+                <span style="--i:1; color: black;">N</span>
+                <span style="--i:2; color: black;">O</span>
+                <span style="--i:3; color: black;">T</span>
+                <span style="--i:4; color: black;">I</span>
+                <span style="--i:5; color: black;">F</span>
+                <span style="--i:6; color: black;">I</span>
+                <span style="--i:7; color: black;">C </span>
+                <span style="--i:9; color: black;">A</span>
+                <span style="--i:10; color: black;">T</span>
+                <span style="--i:12; color: black;">I</span>
+                <span style="--i:13; color: black;">O</span>
+                <span style="--i:14; color: black;">N</span>
+                <span style="--i:15; color: black;">S</span>
+            </div>
+            
+            
+        </div>
+        <a class="add-icon" href="/notifications/new" style="text-decoration: none;">
+          <lord-icon
+            class="mb-3"
+            src="https://cdn.lordicon.com/xzksbhzh.json"
+            trigger="hover"
+            colors="primary:#08a88a,secondary:#d1fad7"
+            style="width:4rem;height:4rem">
+          </lord-icon>
+          <span class="text" style="color: black;">Post a New Notification</span>
+        </a>
+        <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
+            
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane fade show p-0 active">
+
+                <% allNotifs.forEach(function(job){ %>
+
+                    <div class="job-item p-4 mb-4 rounded">
+                        <div class="row g-4">
+                            <div class="col-sm-12 col-md-8 d-flex align-items-center">
+                                <img class="flex-shrink-0 img-fluid" src="<%= job.image %>" alt="" style="width: 5rem; height: auto;">
+                                <div class="text-start ps-4">
+                                    <h5 class="mb-3" style="display: inline;"><%= job.body%>
+                                    <br>
+                                    <span class="text-truncate me-3"><%= job.author %></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
+                                <div class="d-flex ">
+                                    
+                                    <form action="/notifications/<%= job._id %>?_method=DELETE" method="post">
+                                        <input class="btn btn-primary" style="background: #971200; border: none;" type="submit" value="Delete">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+
+<script>
+    const myNav = document.querySelector(".my-navbar");
+    myNav.classList.add("scrolled");
+</script>
+<%- include('./partials/footer.ejs') %>

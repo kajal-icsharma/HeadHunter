@@ -1,0 +1,126 @@
+<title>Edit <%= job.name %> - HeadHunters</title>
+
+
+<%- include('./partials/header.ejs') %>
+
+<div style="height: 6rem; width: 100%; background: none;"></div>
+
+<link rel="stylesheet" href="/stylesheets/edit.css">
+
+
+<!-- Job Detail Start -->
+<div class="container-xxl py-4 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <form action="/jobs/<%= job._id %>?_method=PATCH" method="post">
+            <div class="row gy-5 gx-4">
+                <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+                    <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item pt-2">Home</li>
+                    <li class="breadcrumb-item pt-2">Jobs</li>
+                    <li class="breadcrumb-item pt-2 active" aria-current="page">Edit page for <%= job.name %></li>
+                    <li class="ms-auto ">
+                        <input class="btn btn-success" type="submit" value="Save">
+                    </li>
+                    </ol>
+                </nav>
+                <div class="col-lg-8 bg-light p-4 rounded">
+                    <div class="d-flex align-items-center mb-5">
+                        <img class="flex-shrink-0 img-fluid" src="<%= job.image %>" alt="" style="width: 5rem; height: auto; ">
+                        <div class="text-start ps-4">
+                            <h3 class="mb-3"><input class="rounded p-1" name="name" type="text" value="<%= job.name %>"></h3>
+                            <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i><%= job.address %></span>
+                            <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i><%= job.type %></span>
+                            <span class="text-truncate me-3"><i class="far fa-money-bill-alt text-primary me-2"></i> &#8377 <%= job.package %></span>
+                            <span class="text-truncate me-0"><i class="fa-solid fa-calendar-days me-2"></i> Status: <%= job.status %></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h4 class="mb-3">Image URL</h4>
+                        <p><input style="width: 100%;" class="rounded p-1" type="text" value="<%= job.image %>" name="image" id=""></p>
+                        <h4 class="mb-3">Job description</h4>
+                        <p><textarea class="rounded" style="padding: 1rem; text-align: justify; width: 100%; max-height: max-content;" rows="10" type="text" name="description"><%= job.description %></textarea></p>
+                        <h4 class="mb-3">Responsibility</h4>
+                        <p><textarea class="rounded" style="padding: 1rem; text-align: justify; width: 100%; max-height: max-content;" rows="10" type="text" name="responsibilities><%= job.responsibilities %></textarea></p>
+                        <h4 class="mb-3">Qualifications</h4>
+                        <p><textarea class="rounded" style="padding: 1rem; text-align: justify; width: 100%; max-height: max-content;" rows="10" type="text" name="requirements"><%= job.requirements %></textarea></p>
+                        
+                    </div>
+
+                    
+                </div>
+                <div class="col-lg-4 job-summary">
+                    <div class="bg-light rounded p-4 pb-4 mb-2 wow slideInUp" data-wow-delay="0.1s">
+                        <h4 class="mb-4">Job Summery</h4>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Published On: <%= job.createdAt %></p>
+
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Vacancy: 789 Position</p>
+                        
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Job Category:
+                            <select name="category" id="category" class="form-control">
+                                <option value="Marketing" <% if (job.category=== 'Marketing') { %> selected <% } %>>Marketing</option>
+                                <option value="Software Engineer" <% if (job.category=== 'Software Engineer') { %> selected <% } %>>Software Engineer</option>
+                                <option value="Program Developer" <% if (job.category=== 'Program Developer') { %> selected <% } %>>Program Developer</option>
+                                <option value="Project Management" <% if (job.category=== 'Project Management') { %> selected <% } %>>Project Management</option>
+                                <option value="Business Development" <% if (job.category=== 'Business Development') { %> selected <% } %>>Business Development</option>
+                                <option value="Sales and Communication" <% if (job.category=== 'Sales and Communication') { %> selected <% } %>>Sales and Communication</option>
+                                <option value="Teaching and Education" <% if (job.category=== 'Teaching and Education') { %> selected <% } %>>Teaching and Education</option>
+                                <option value="Design and Creative" <% if (job.category=== 'Design and Creative') { %> selected <% } %>>Design and Creative</option>
+                            </select>
+                        </p>
+                        
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Job Nature:
+                            <select name="type" id="type" class="form-control">
+                                <option value="Full-Time" <% if (job.type === 'Full-Time') { %>selected<% } %>>Full-Time</option>
+                                <option value="Part-Time" <% if (job.type === 'Part-Time') { %>selected<% } %>>Part-Time</option>
+                                <option value="Temporary" <% if (job.type === 'Temporary') { %>selected<% } %>>Temporary</option>
+                                <option value="Seasonal" <% if (job.type === 'Seasonal') { %>selected<% } %>>Seasonal</option>
+                            </select>
+                        </p>
+
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Experience:
+                            <select name="experience" id="experience" class="form-control">
+                                <option value="Entry Level" <% if (job.experience === 'Entry Level') { %>selected<% } %>>Entry Level</option>
+                                <option value="Mid Level" <% if (job.experience === 'Mid Level') { %>selected<% } %>>Mid Level</option>
+                                <option value="Mid-Senior Level" <% if (job.experience === 'Mid-Senior Level') { %>selected<% } %>>Mid-Senior Level</option>
+                                <option value="Top Level" <% if (job.experience === 'Top Level') { %>selected<% } %>>Top Level</option>
+                              </select>
+                        </p>
+                        
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Salary: &#8377 <input class="p-1 rounded"  type="text" value="<%= job.package %>" name="package"></p>
+                        
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Location: <input class="p-1 rounded"  type="text" value="<%= job.address %>" name="address"></p>
+
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Min CGPA Required: <input class="p-1 rounded"  type="text" value="<%= job.cgpa %>" name="cgpa"></p>
+                        
+                        <p class="m-0"><i class="fa fa-angle-right text-primary me-2"></i>Date Line: <input class="rounded p-1" type="date" value="<%= job.deadline %>" name="deadline"></p>
+                    </div>
+                    <div class="bg-light rounded p-4 pt-4 wow slideInUp" data-wow-delay="0.1s">
+                        <h4 class="mb-4">Company Detail</h4>
+                        <p><%= job.aboutCompany %></p>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Company Phone: <input class="rounded p-1" type="text" value="<%= job.companyPhone %>" name="companyPhone></p>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Company Email: <input class="rounded p-1" type="text" value="<%= job.companyEmail %>" name="companyEmail></p>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Company Size: <input class="rounded p-1" type="text" value="<%= job.companySize %>" name="companySize"></p>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Company Website: <input style="width: 100%;" class="rounded p-1" type="text" value="<%= job.companyWebsite %>" name="companyWebsite></p>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+    const myNav = document.querySelector(".my-navbar");
+    myNav.classList.add("scrolled");
+    
+</script>
+
+<%- include('./partials/footer.ejs') %>

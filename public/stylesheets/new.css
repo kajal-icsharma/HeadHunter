@@ -1,0 +1,30 @@
+
+
+
+body{
+    background-image: url('/img/mesh-441.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.row{
+
+    margin-bottom: 4rem;
+
+}
+
+.row .col-6{
+    background-color: aliceblue;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+    box-shadow: 2px 2px 10px 1px rgb(26, 26, 26);
+}
+
+.row .col-6 h1{
+    margin-bottom: 2rem;
+}

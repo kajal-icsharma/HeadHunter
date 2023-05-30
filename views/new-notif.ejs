@@ -1,0 +1,53 @@
+<title>Push Notification - HeadHunters</title>
+
+
+<%- include('./partials/header.ejs') %>
+
+
+<link rel="stylesheet" href="/stylesheets/newnotif.css">
+<!-- <div class="row">
+    <div class="col-6 m-auto">
+        <h1>New form to post a notification</h1>
+        <form action="/notifications" method="post">
+            <div class="mb-3">
+                <label for="body" class="form-label">notification body</label>
+                <input type="text" class="form-control" id="body" name="body">
+            </div>
+            <div class="mb-3">
+                <label for="author" class="form-label">author</label>
+                <input type="text" class="form-control" id="author" name="author">
+            </div>
+            <div>
+                <input class="btn btn-primary" type="submit" value="Add a new notification">
+            </div>
+        </form>
+    </div>
+</div> -->
+
+<div class="notif-container">
+    <div class="input-container p-5">
+        <h1>Post a Notification</h1>
+        <form action="/notifications" method="post">
+            <div class="mb-3">
+                <label for="body" class="form-label">Notification Body</label>
+                <input type="text" class="form-control" id="body" name="body" required>
+            </div>
+            <div class="mb-3">
+                <label for="author" class="form-label">Author</label>
+                <input type="text" class="form-control" id="author" name="author" required>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Image URL (Optional)</label>
+                <input type="text" class="form-control" id="image" name="image">
+            </div>
+            <div>
+                <input class="btn btn-success ms-auto" type="submit" value="Post">
+            </div>
+        </form>
+    </div>  
+  </div>
+  
+
+
+
+<%- include('./partials/footer.ejs') %>

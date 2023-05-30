@@ -1,0 +1,258 @@
+<title>Edit <%= user.name %> - HeadHunters</title>
+
+
+<%- include('./partials/header.ejs') %>
+<link rel="stylesheet" href="/stylesheets/edit-user.css">
+
+<!-- <div style="height: 5rem; width: 100%; background: none;"></div> -->
+
+
+<!-- <div class="row" style="background-image: url('https://cdn.pixabay.com/photo/2013/07/13/01/20/monitor-155565_960_720.png');">
+    <div class="form col-10 mx-auto">
+        <h1>Edit form for <%= user.name %></h2>
+        <form action="/users/<%= user._id %>?_method=PATCH" method="post">
+            <div class="mb-3 mt-4">
+                <label for="name" class="form-label">Name</label>
+                <input value="<%= user.name %>" type="text" class="form-control" id="name" name="user[name]">
+            </div>
+            <div class="mb-3 mt-4">
+                <label for="cgpa" class="form-label">Cgpa</label>
+                <input value="<%= user.cgpa %>" type="number" class="form-control" id="cgpa" name="user[cgpa]" min="0"
+                    max="10" step="0.01">
+            </div>
+            <div>
+                <input class="btn btn-primary mt-4" type="submit" value="Edit user">
+            </div>
+            
+        </form>
+    </div>
+</div> -->
+
+
+
+<section style="background-color: #33ff84;">
+    <div class="container py-3">
+        <form action="/users/<%= user._id %>?_method=PATCH" method="post">
+      <div class="row">
+        <div class="col">
+          <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
+            <ol class="breadcrumb mb-0">
+              <li class="breadcrumb-item">Home</li>
+              <li class="breadcrumb-item">User</li>
+              <li class="breadcrumb-item active" aria-current="page">Edit page for <%= user.username %></li>
+              <li class=" ms-auto"><a href="#" ><input class="btn btn-success" type="submit" value="Save"></a></li>
+              
+              
+            </ol>
+          </nav>
+        </div>
+      </div>
+      
+        <div class="row">
+            <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                <img src="https://www.nicepng.com/png/full/207-2074901_woman-icon-avatar-icon.png" alt="avatar"
+                    class="rounded-circle img-fluid" style="width: 150px;">
+                <h5 class="my-3">
+                    <%= user.name %>
+                </h5>
+                <p class="text-muted mb-1">Full Stack Developer</p>
+                <p class="text-muted mb-4"><%= user.address %></p>
+                <div class="d-flex justify-content-center mb-2">
+                    <a href="#"><button type="button" class="btn btn-primary">Follow</button></a>
+                    <a href="#"><button type="button" class="btn btn-outline-primary ms-1">Message</button></a>
+                </div>
+                </div>
+            </div>
+            <div class="card mb-4 mb-lg-0">
+                <div class="card mb-4 mb-md-0">
+                <div class="card-body">
+                    <p class="mb-4"><span class="text-primary font-italic me-1">Skills</span>
+                    </p>
+                    <p class="mb-1" style="font-size: .77rem;">React.js</p>
+                    <div class="progress rounded" style="height: 5px;">
+                    <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p class="mt-4 mb-1" style="font-size: .77rem;">Node.js</p>
+                    <div class="progress rounded" style="height: 5px;">
+                    <div class="progress-bar" role="progressbar" style="width: 72%" aria-valuenow="72"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p class="mt-4 mb-1" style="font-size: .77rem;">Javascript</p>
+                    <div class="progress rounded" style="height: 5px;">
+                    <div class="progress-bar" role="progressbar" style="width: 89%" aria-valuenow="89"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p class="mt-4 mb-1" style="font-size: .77rem;">HTML</p>
+                    <div class="progress rounded" style="height: 5px;">
+                    <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="55"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p class="mt-4 mb-1" style="font-size: .77rem;">Cascading Style Sheets</p>
+                    <div class="progress rounded mb-2" style="height: 5px;">
+                    <div class="progress-bar" role="progressbar" style="width: 66%" aria-valuenow="66"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-lg-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                <div class="row">
+                    <label class="col-sm-3">
+                    <p class="mb-0">Full Name :</p>
+                    </label>
+                    <div class="col-sm-9">
+                        <input value="<%= user.name %>" type="text" class="form-control" id="name" name="user[name]">
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                    <p class="mb-0">Email :</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <input value="<%= user.username %>" type="text" class="form-control" id="email" name="user[username]">
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                    <p class="mb-0">Phone :</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <input value="<%= user.mobile_number %>" type="text" class="form-control" id="mobile_number" name="user[mobile_number]">
+
+                    </div>
+                </div>
+                <!-- <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                    <p class="mb-0">Mobile</p>
+                    </div>
+                    <div class="col-sm-9">
+                    <p class="text-muted mb-0">(098) 765-4321</p>
+                    </div>
+                </div> -->
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                    <p class="mb-0">Address :</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <input value="<%= user.address %>" type="text" class="form-control" id="address" name="user[address]">
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                    <p class="mb-0">Resume link :</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <input value="<%= user.resume_link%>" type="text" class="form-control" id="resume_link" name="user[resume_link]">
+
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-3">
+                    <p class="mb-0">Documents Link :</p>
+                    </div>
+                    <div class="col-sm-9">
+                        <input value="<%= user.documents_link %>" type="text" class="form-control" id="documents_link" name="user[documents_link]">
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class=" col-md-6">
+                    <div class="card-body p-0">
+                    <ul class="list-group list-group-flush rounded-3">
+                        
+                        <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                            <i class="fa-brands fa-github"></i>
+                        <p class="mb-0">abcd/github</p>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                        <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+                        <p class="mb-0">@abcdtwitter</p>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                        <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                        <p class="mb-0">abcd@gmail.com</p>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                        <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                        <p class="mb-0">abcd@gmail.com</p>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                        <i class="fas fa-globe fa-lg text-warning"></i>
+                        
+                        <p class="mb-0"> abcd/leetcode</p>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                <div class="card mb-4 mb-md-0">
+                    <div class="card-body mb-1">
+                    <p class="mb-4"><span class="text-primary font-italic me-1">Educational Details</span>
+                    </p>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <p class="mb-0">Course :</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <input value="<%= user.course %>" type="text" class="form-control" id="course" name="user[course]">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <p class="mb-0">Branch :</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <input value="<%= user.branch %>" type="text" class="form-control" id="branch" name="user[branch]">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <p class="mb-0">CGPA :</p>
+                            </div>
+                            <div class="col-sm-9">
+                                <input value="<%= user.cgpa %>" type="text" class="form-control" id="cgpa" name="user[cgpa]">
+                            </div>
+                        </div>
+                        
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        
+      </form>
+    </div>
+  </section>
+
+<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+
+
+<script>
+    const myNav = document.querySelector(".my-navbar");
+    myNav.classList.add("scrolled");
+</script>
+
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,55 @@
+<%- include('./partials/header.ejs') %>
+<link rel="stylesheet" href="/stylesheets/login.css">
+
+<div style="height: 6rem; width: 100%; background: none;"></div>
+
+
+<div class="cont mt-5 s--signup">
+  
+  <div class="sub-cont">
+    <div class="img">
+      
+      <div class="img__text m--in">
+        <h2>One of us?</h2>
+        <p>If you already has an account, just sign in. We've missed you!</p>
+      </div>
+      <a href="/login">
+          <div class="img__btn">
+            <span class="m--in">Sign In</span>
+          </div>
+      </a>
+    </div>
+    <div class="form sign-up">
+      <h2>Time to feel like home,</h2>
+      <label>
+        <span>Name</span>
+        <input type="text" />
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" />
+      </label>
+      <label>
+        <span>Password</span>
+        <input type="password" />
+      </label>
+      <button type="button" class="submit">Sign Up</button>
+      <button type="button" class="fb-btn">Join with <span>facebook</span></button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<script>
+    const myNav = document.querySelector(".navbar");
+    myNav.classList.add("scrolled");
+</script>
+
+<%- include('./partials/footer.ejs') %>

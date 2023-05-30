@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap');
+
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #00b074 #e3e3e3;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #e3e3e3;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #00b074;
+    border-radius: 10px;
+    border: 2px double #e0e0e0;
+  }
+
+
+
+/********** Template CSS **********/
+:root {
+	--primary: #00B074;
+	--secondary: #2B9BFF;
+	--light: #EFFDF5;
+	--dark: #2B3940;
+}
+
+/* =======================================
+General Styling
+======================================= */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Work Sans', sans-serif;
+  color: black;
+  overflow-x: hidden;
+}
+
+/* =======================================
+Navbar
+======================================= */
+.my-navbar {
+  /* background-color: rgba(255, 255, 255, .4); */
+  background: none;
+  /* backdrop-filter: blur(12px); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 4rem;
+  transition: 350ms cubic-bezier(0.65, 0, 0.35, 1);
+  z-index: 9999;
+}
+
+
+.my-navbar.scrolled {
+  background-color: whitesmoke;
+  -webkit-box-shadow: 2px 9px 15px 1px rgba(0,0,0,0.55); 
+  box-shadow: 2px 9px 15px 1px rgba(0,0,0,0.55);
+}
+
+.my-navbar.scrolled .nav-link, .my-navbar.scrolled #brand, .my-navbar.scrolled #logo {
+  color: black !important;
+}
+
+.nav-list {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.nav-link, #brand {
+  
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-family: 'Abel', sans-serif;
+  /* text-transform: uppercase; */
+  transition: 350ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#brand{
+  font-family: 'Cinzel Decorative', cursive;
+  font-family: 'Playball', cursive;
+  font-family: 'Tangerine', cursive;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.35rem;
+  font-size: 1.75rem;
+}
+/* =======================================
+More General Styling
+======================================= */
+.banner {
+  min-height: 100vh;
+  /* background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"); */
+
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.6)
+  ),
+  url("../img/carousel-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: block;
+  height: 100vh;
+  
+}
+
+.banner h1, .banner h2{
+  position: absolute;
+  color: #fff;
+  left: 10rem;
+}
+.banner h1{
+  top: 15rem;
+  font-size: 5rem;
+  font-weight: 700;
+}
+.banner h2{
+  top: 21rem;
+  font-size: 4rem;
+  font-weight: 100;
+}
+
+.banner .search-box{
+  /* /* background-color: white; */
+  height: 5.5rem;
+  position: absolute;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  left: 10rem;
+  top: 30rem; 
+  
+  width: 50rem;
+  background: rgba( 255, 255, 255, 0.15 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 10px );
+-webkit-backdrop-filter: blur( 10px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+.banner .search-box form .input{
+  width: 70%;
+  display: inline-block;
+  background: none;
+  color: white;
+}
+
+.banner .search-box form .input:focus{
+  border: 1px solid var(--primary)  !important;
+  box-shadow: 0 0 7.5px var(--primary);
+  
+}
+
+.banner .search-box form .input::placeholder{
+  color: white;
+}
+
+.banner .search-box form button{
+  width: 20%;
+  color: white;
+  background-color: var(--primary);
+  border: none;
+}
+
+
+
+
+
+
+
+.section-1 {
+  
+  
+  height: 25rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.section-1 .details{
+  display: flex;
+  flex-direction: column;
+  color: black;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.categories{
+  /* background-color: rgb(238, 238, 238); */
+
+  background: rgb(2,0,36);
+background: linear-gradient(45deg, rgba(0, 0, 5, 0.916) 19%, rgba(2, 136, 91, 0.904) 74%, rgba(0, 170, 122, 0.712) 100%);
+}
+
+.categories h1{
+  color: black;
+}
+
+.categories .details{
+  display: flex;
+  background-color: white;
+  
+  flex-direction: column;
+  color: black;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  margin: 1rem ;
+}
+
+.details a{
+  text-decoration: none;
+  color: black;
+}
+
+
+.categories div .details{
+  border-top-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+}
+
+.section-2 {
+  background-color: #222;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.waviy {
+  position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.waviy span {
+  font-family: 'Bruno Ace SC', cursive;
+  font-size: 3rem;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  animation: waviy 1s infinite;
+  animation-delay: calc(.1s * var(--i));
+  
+}
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-20px)
+  }
+}
+
+
+
+/* Recent Jobs Section */
+
+.nav-pills .nav-item .active {
+	border-bottom: 2px solid var(--primary);
+}
+
+.job-item {
+	border: 1px solid transparent;
+	border-radius: 2px;
+	box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+	transition: .5s;
+}
+
+.job-item:hover {
+	border-color: rgba(0, 0, 0, .08);
+	box-shadow: none;
+}
+
+.jobs-container .container div ul a{
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.jobs-container .tab-content .job-item i{
+  color: var(--primary);
+}
+
+.jobs-container .tab-content .more-jobs{
+  transition: all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+}
+
+.jobs-container .tab-content .more-jobs:hover{
+  scale: 1.1;
+}
+
+/* Add icon taken from lordicon */
+
+.text {
+  display: none;
+}
+
+.add-icon:hover .text {
+  display: inline;
+}
+

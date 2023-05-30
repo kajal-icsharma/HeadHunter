@@ -1,0 +1,93 @@
+
+
+/*** Header ***/
+.header-carousel .container,
+.page-header .container {
+	position: relative;
+	padding: 45px 0 45px 35px;
+	border-left: 15px solid var(--primary);
+}
+
+.header-carousel .container::before,
+.header-carousel .container::after,
+.page-header .container::before,
+.page-header .container::after {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	width: 100px;
+	height: 15px;
+	background: var(--primary);
+}
+
+.header-carousel .container::after,
+.page-header .container::after {
+	top: 100%;
+	margin-top: -15px;
+}
+
+@media (max-width: 768px) {
+	.header-carousel .owl-carousel-item {
+		position: relative;
+		min-height: 500px;
+	}
+	
+	.header-carousel .owl-carousel-item img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.header-carousel .owl-carousel-item p {
+		font-size: 14px !important;
+		font-weight: 400 !important;
+	}
+
+	.header-carousel .owl-carousel-item h1 {
+		font-size: 30px;
+		font-weight: 600;
+	}
+}
+
+.header-carousel .owl-nav {
+	position: absolute;
+	top: 50%;
+	right: 8%;
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: column;
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+	margin: 7px 0;
+	width: 45px;
+	height: 45px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #FFFFFF;
+	background: transparent;
+	border: 1px solid #FFFFFF;
+	border-radius: 2px;
+	font-size: 22px;
+	transition: .5s;
+}
+
+.header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+	background: var(--primary);
+	border-color: var(--primary);
+}
+
+.page-header {
+	background: linear-gradient(rgba(43, 57, 64, .5), rgba(43, 57, 64, .5)), url('/img/carousel-1.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+	color: var(--light);
+}
+
